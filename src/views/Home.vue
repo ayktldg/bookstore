@@ -1,7 +1,7 @@
 <template>
 <div class="home">
-  <div class="container">
-    <h1 class="font-weight-bold my-5">Welcome to Bookshelf</h1>
+  <div class="container my-5">
+    <h1 class="font-weight-bold">Welcome to Bookshelf</h1>
   </div>
     <div class="menu container d-flex align-items-center px-0">
       <BookstoreMenu />

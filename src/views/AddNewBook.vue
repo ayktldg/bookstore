@@ -44,6 +44,7 @@
 
 <script>
 import BaseReturnToHomeButton from '../components/BaseReturnToHomeButton'
+import { v4 as uuidv4 } from 'uuid';
     export default {
         name: 'AddNewBook',
         components: {
@@ -60,6 +61,15 @@ import BaseReturnToHomeButton from '../components/BaseReturnToHomeButton'
                 }
             }
         },
+        methods:{
+            onSave(){
+                this.generateId();
+                
+            },
+            generateId(){
+                this.book.id = uuidv4();
+            }
+        }
     }
 </script>
 
