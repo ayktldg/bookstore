@@ -1,7 +1,9 @@
 <template>
 <div class="home">
-    <h1 class="font-weight-bold mt-5">Welcome to Bookshelf</h1>
-    <div class="menu d-flex justify-content-center align-items-center px-5">
+  <div class="container">
+    <h1 class="font-weight-bold my-5">Welcome to Bookshelf</h1>
+  </div>
+    <div class="menu container d-flex align-items-center px-0">
       <BookstoreMenu />
       <UserMenu />       
   </div>

@@ -34,6 +34,10 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "get-from-user" */ "../views/GetFromUser.vue")
   },
+  {
+    path: "*",
+    redirect: "/"
+  },
 
 ];
 

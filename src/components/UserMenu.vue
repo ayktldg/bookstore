@@ -1,5 +1,5 @@
 <template>
-  <div class="container d-flex flex-column p-5 m-5 border bg-light">
+  <div class="container d-flex flex-column p-5 border bg-light">
     <h2>User Operations</h2>
     <router-link
       tag="button"
