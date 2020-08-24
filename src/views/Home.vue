@@ -1,18 +1,29 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+<div class="home">
+    <h1 class="font-weight-bold mt-5">Welcome to Bookshelf</h1>
+    <div class="menu d-flex justify-content-center align-items-center px-5">
+      <BookstoreMenu />
+      <UserMenu />       
   </div>
+</div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import BookstoreMenu from '../components/BookstoreMenu'
+import UserMenu from '../components/UserMenu'
 export default {
   name: "Home",
   components: {
-    HelloWorld
+    BookstoreMenu,
+    UserMenu
   }
 };
 </script>
+<style scoped>
+  @media (max-width: 575.98px) { 
+  .menu{
+    display: flex;
+    flex-direction: column;}
+  }
+
+</style>
