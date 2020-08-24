@@ -43,7 +43,7 @@
             v-model="user.adress"
           />
         </div>
-        <button type="submit" class="btn btn-secondary btn-block mt-5">Save</button>
+        <button type="submit" class="btn btn-sm btn-secondary btn-block mt-5">Save</button>
       </form>
     </div>
   </div>

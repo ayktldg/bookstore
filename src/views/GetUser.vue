@@ -13,15 +13,12 @@
           <option v-for="book in books" :key="book.id" :value="book">{{book.name}}</option>
         </select>
       </div>
-      <div class="userList">
-        <ul v-if="user">
-            <li>{{user.userId}}</li>
-            <li>{{user.fullName}}</li>
-            <li>{{user.adress}}</li>
-          </ul> 
+      <div class="userList mt-4" v-if="user">
+            <p>{{user.userId}}</p>
+            <p>{{user.fullName}}</p>
+            <p>{{user.adress}}</p>
       </div>
-           
-      <button type="submit" class="btn btn-secondary btn-block mt-5">Get User</button>
+      <button type="submit" class="btn btn-sm btn-secondary btn-block mt-4">Get User</button>
     </form>
     </div>
   </div>
@@ -57,5 +54,8 @@ export default {
 <style scoped>
 .userList{
   min-height: 5rem;
+}
+p{
+  line-height: 1;
 }
 </style>
