@@ -29,10 +29,10 @@ const routes = [
       import(/* webpackChunkName: "book-list" */ "../views/BookList.vue")
   },
   {
-    path: "/get-from-user",
-    name: "GetFromUser",
+    path: "/get-user",
+    name: "GetUser",
     component: () =>
-      import(/* webpackChunkName: "get-from-user" */ "../views/GetFromUser.vue")
+      import(/* webpackChunkName: "get-user" */ "../views/GetUser.vue")
   },
   {
     path: "*",

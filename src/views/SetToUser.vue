@@ -10,7 +10,7 @@
           <label for="bookControlSelect">Book Name</label>
           <select class="form-control" id="bookControlSelect" v-model="user.selectedBook">
              <option value="" selected disabled>Please select a book</option>
-            <option v-for="book in books" :key="book.id" :value="book">{{book.name}}</option>
+            <option v-for="book in books" :key="book.id" :value="book.id">{{book.name}}</option>
           </select>
         </div>
         <div class="form-group">
@@ -63,8 +63,9 @@ export default {
               selectedBook: '',
               userId: '',
               fullName: '',
-              adress: ''
-          }
+              adress: '',
+          },
+         
       }
   },
   methods:{
@@ -79,7 +80,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters({books: 'bookshelfForUser'})
+    ...mapGetters({books: 'bookshelfForSetUser'})
   }
 };
 </script>
