@@ -25,7 +25,8 @@ export default {
   @media (max-width: 575.98px) { 
   .menu{
     display: flex;
-    flex-direction: column;}
+    flex-direction: column;
+    }
   }
 
 </style>

@@ -3,15 +3,14 @@
     <div class="container col-6 pl-0 mt-5 mb-3">
       <h2 class="font-weight-bold">Set to User</h2>
     </div>
-    <BaseReturnToHomeButton />
+    <BaseReturnToHomeButton  class="col-6"/>
     <div class="container mt-3 mb-5 col-6 p-5 bg-light border">
       <form @submit.prevent="onSave">
         <div class="form-group">
           <label for="bookControlSelect">Book Name</label>
-          <select class="form-control" id="bookControlSelect" v-model="user.bookName">
-            <option value="" selected disabled>Please select a book</option>
-            <option>1</option>
-            <option>2</option>
+          <select class="form-control" id="bookControlSelect" v-model="user.selectedBook">
+             <option value="" selected disabled>Please select a book</option>
+            <option v-for="book in books" :key="book.id" :value="book">{{book.name}}</option>
           </select>
         </div>
         <div class="form-group">
@@ -52,6 +51,7 @@
 
 <script>
 import BaseReturnToHomeButton from "../components/BaseReturnToHomeButton";
+import { mapGetters } from 'vuex';
 export default {
   name: "SetToUser",
   components: {
@@ -60,15 +60,29 @@ export default {
   data() {
       return {
           user: {
-              bookName: '',
-              userId: null,
+              selectedBook: '',
+              userId: '',
               fullName: '',
               adress: ''
           }
       }
   },
+  methods:{
+    onSave(){
+      this.$store.dispatch('SET_NEW_USER', this.user)
+      this.clearForm();
+    },
+    clearForm(){
+      this.user.userId = '';
+      this.user.fullName = '';
+      this.user.adress = '';
+    }
+  },
+  computed: {
+    ...mapGetters({books: 'bookshelfForUser'})
+  }
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 </style>

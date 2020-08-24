@@ -1,5 +1,5 @@
 <template>
-  <div class="container col-6 text-right pr-0">
+  <div class="container text-right pr-0">
     <router-link to="/" class="link text-secondary text-decoration-none ">
       <svg class="icon icon-arrow-left2">
         <use xlink:href="#icon-arrow-left2" />

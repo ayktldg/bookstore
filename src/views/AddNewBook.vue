@@ -3,7 +3,7 @@
     <div class="container col-6 pl-0 mt-5 mb-3">
         <h2 class="font-weight-bold">Add New Book</h2>
     </div>
-    <BaseReturnToHomeButton />
+    <BaseReturnToHomeButton class="col-6"/>
      <div class="container mt-3 mb-5 col-6 p-5 bg-light border">
     <form @submit.prevent="onSave">
       <div class="form-group">
@@ -56,18 +56,23 @@ import { v4 as uuidv4 } from 'uuid';
                     id: '',
                     name: '',
                     author: '',
-                    imageUrl: '',
-                    user: {}
+                    imageUrl: ''
                 }
             }
         },
         methods:{
             onSave(){
                 this.generateId();
-                
+                this.$store.dispatch('ADD_NEW_BOOK', this.book);
+                this.clearForm();
             },
             generateId(){
                 this.book.id = uuidv4();
+            },
+            clearForm(){
+              this.book.name = '';
+              this.book.author = '';
+              this.book.imageUrl = '';
             }
         }
     }
