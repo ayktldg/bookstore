@@ -17,7 +17,7 @@ export default {
   name: "BookList",
   components: {
     BaseReturnToHomeButton,
-    BookCard
+    BookCard,
   },
   computed: {
     ...mapGetters({ books: "bookshelf" })

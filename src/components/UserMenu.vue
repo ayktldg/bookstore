@@ -9,7 +9,7 @@
     >Set to User</router-link>
     <router-link
       tag="button"
-      to="/get-user"
+      to="/get-from-user"
       type="button"
       class="btn btn-sm btn-secondary"
     >Get from User</router-link>
