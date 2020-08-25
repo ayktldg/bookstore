@@ -8,7 +8,9 @@ import VueSimpleAlert from "vue-simple-alert";
 import { ValidationObserver, ValidationProvider, extend, localize } from 'vee-validate';
 import en from 'vee-validate/dist/locale/en.json';
 import * as rules from 'vee-validate/dist/rules';
+import Notifications from 'vue-notification'
 
+Vue.use(Notifications)
 Vue.use(VueSimpleAlert); 
 
 Object.keys(rules).forEach(rule => {

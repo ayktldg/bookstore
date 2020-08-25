@@ -8,8 +8,13 @@
       <ValidationObserver v-slot="{ handleSubmit }">
         <form @submit.prevent="handleSubmit(onSave)">
           <div class="form-group">
-              <label for="inputBookName">Book Name</label>
-               <ValidationProvider name="Book Name" mode="passive" rules="required" v-slot="{ errors }">
+            <label for="inputBookName">Book Name</label>
+            <ValidationProvider
+              name="Book Name"
+              mode="passive"
+              rules="required"
+              v-slot="{ errors }"
+            >
               <input
                 type="text"
                 class="form-control"
@@ -22,28 +27,33 @@
           </div>
           <div class="form-group">
             <label for="inputAuthor">Author</label>
-             <ValidationProvider name="Author" mode="passive" rules="required" v-slot="{ errors }">
-            <input
-              type="text"
-              class="form-control"
-              id="inputAuthor"
-              placeholder="Please enter author"
-              v-model="book.author"
-            />
-            <span class="text-danger">{{ errors[0] }}</span>
+            <ValidationProvider name="Author" mode="passive" rules="required" v-slot="{ errors }">
+              <input
+                type="text"
+                class="form-control"
+                id="inputAuthor"
+                placeholder="Please enter author"
+                v-model="book.author"
+              />
+              <span class="text-danger">{{ errors[0] }}</span>
             </ValidationProvider>
           </div>
           <div class="form-group">
             <label for="inputImageUrl">Book Image Url</label>
-             <ValidationProvider name="Image Url" mode="passive" rules="required" v-slot="{ errors }">
-            <input
-              type="text"
-              class="form-control"
-              id="inputImageUrl"
-              placeholder="Book Image URL"
-              v-model="book.imageUrl"
-            />
-            <span class="text-danger">{{ errors[0] }}</span>
+            <ValidationProvider
+              name="Image Url"
+              mode="passive"
+              rules="required"
+              v-slot="{ errors }"
+            >
+              <input
+                type="text"
+                class="form-control"
+                id="inputImageUrl"
+                placeholder="Book Image URL"
+                v-model="book.imageUrl"
+              />
+              <span class="text-danger">{{ errors[0] }}</span>
             </ValidationProvider>
           </div>
           <button type="submit" class="btn btn-secondary btn-block mt-5">Save</button>
@@ -75,6 +85,10 @@ export default {
     onSave() {
       this.generateId();
       this.$store.dispatch("ADD_NEW_BOOK", this.book);
+      this.$notify({
+        text: `${this.book.name} has been added succesfully`,
+        type: "success"
+      });
       this.clearForm();
     },
     generateId() {
@@ -90,5 +104,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>

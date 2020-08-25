@@ -10,12 +10,18 @@
           <div class="form-group">
             <label for="bookControlSelect">Book Name</label>
             <select class="form-control" id="bookControlSelect" v-model="user.selectedBook">
+              <option value selected disabled>Please select a book</option>
               <option v-for="book in books" :key="book.id" :value="book.id">{{book.name}}</option>
             </select>
           </div>
           <div class="form-group">
             <label for="inputId">Identity Number</label>
-            <ValidationProvider name="Identity Number" mode="passive" rules="required" v-slot="{ errors }">
+            <ValidationProvider
+              name="Identity Number"
+              mode="passive"
+              rules="required"
+              v-slot="{ errors }"
+            >
               <input
                 type="text"
                 class="form-control"
@@ -28,7 +34,12 @@
           </div>
           <div class="form-group">
             <label for="inputFullName">User Fullname</label>
-            <ValidationProvider name="User Fullname" mode="passive" rules="required" v-slot="{ errors }">
+            <ValidationProvider
+              name="User Fullname"
+              mode="passive"
+              rules="required"
+              v-slot="{ errors }"
+            >
               <input
                 type="text"
                 class="form-control"
@@ -80,6 +91,12 @@ export default {
   methods: {
     onSave() {
       this.$store.dispatch("SET_NEW_USER", this.user);
+      this.$notify({
+        text: `${this.bookName(
+          this.user.selectedBook
+        )} has been setted to user`,
+        type: "success"
+      });
       this.clearForm();
     },
     clearForm() {
@@ -87,6 +104,11 @@ export default {
       this.user.userId = "";
       this.user.fullName = "";
       this.user.adress = "";
+    },
+    bookName(bookId) {
+      const index = this.books.findIndex(obj => obj.id === bookId);
+      console.log(this.books[index]);
+      return this.books[index].name;
     }
   },
   computed: {
