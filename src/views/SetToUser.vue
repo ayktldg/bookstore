@@ -11,7 +11,7 @@
             <label for="bookControlSelect">Book Name</label>
             <select class="form-control" id="bookControlSelect" v-model="user.selectedBook">
               <option value selected disabled>Please select a book</option>
-              <option v-for="book in books" :key="book.id" :value="book.id">{{book.name}}</option>
+              <option v-for="book in books" :key="book.id" :value="{id: book.id, name: book.name}">{{book.name}}</option>
             </select>
           </div>
           <div class="form-group">
@@ -92,9 +92,9 @@ export default {
     onSave() {
       this.$store.dispatch("SET_NEW_USER", this.user);
       this.$notify({
-        text: `${this.bookName(
-          this.user.selectedBook
-        )} has been setted to user`,
+        text: `${
+          this.user.selectedBook.name
+        } has been setted to user`,
         type: "success"
       });
       this.clearForm();
@@ -104,11 +104,6 @@ export default {
       this.user.userId = "";
       this.user.fullName = "";
       this.user.adress = "";
-    },
-    bookName(bookId) {
-      const index = this.books.findIndex(obj => obj.id === bookId);
-      console.log(this.books[index]);
-      return this.books[index].name;
     }
   },
   computed: {

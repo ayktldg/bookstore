@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     removeBook(book) {
-      this.$confirm("Are you sure delete this book?").then(() => {
+      this.$confirm(`Are you sure delete the ${ book.name}?`).then(() => {
         this.$store.dispatch("REMOVE_BOOK", book);
         this.$notify({
         text: `${book.name} deleted`,

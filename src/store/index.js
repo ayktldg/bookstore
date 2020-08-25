@@ -16,7 +16,7 @@ export default new Vuex.Store({
           state.bookshelf.push(payload);
       },
       SET_NEW_USER(state,payload){
-        const index = state.bookshelf.findIndex( obj => obj.id === payload.selectedBook);
+        const index = state.bookshelf.findIndex( obj => obj.id === payload.selectedBook.id);
         state.bookshelf[index].user = payload;
       },
       REMOVE_BOOK(state,payload){
@@ -46,10 +46,7 @@ export default new Vuex.Store({
   getters: {
       bookshelf: state => state.bookshelf,
       bookshelfForSetUser: state => state.bookshelf.filter(obj => obj.user === null),
-      bookshelfForGetFromUser: state =>{
-        const books = state.bookshelf.filter(obj => obj.user !== null)
-        return books
-      } 
+      bookshelfForGetFromUser: state =>  state.bookshelf.filter(obj => obj.user !== null),
   },
   plugins: [vuexLocal.plugin],
 });

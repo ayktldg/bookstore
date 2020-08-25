@@ -9,6 +9,11 @@ import { ValidationObserver, ValidationProvider, extend, localize } from 'vee-va
 import en from 'vee-validate/dist/locale/en.json';
 import * as rules from 'vee-validate/dist/rules';
 import Notifications from 'vue-notification'
+import BootstrapVue from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+Vue.use(BootstrapVue)
 
 Vue.use(Notifications)
 Vue.use(VueSimpleAlert); 
