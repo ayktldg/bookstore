@@ -7,17 +7,20 @@
       <BookstoreMenu />
       <UserMenu />
     </div>
+    <Footer />
   </div>
 </template>
 
 <script>
 import BookstoreMenu from "../components/BookstoreMenu";
 import UserMenu from "../components/UserMenu";
+import Footer from "../components/Footer";
 export default {
   name: "Home",
   components: {
     BookstoreMenu,
-    UserMenu
+    UserMenu,
+    Footer
   }
 };
 </script>
