@@ -48,7 +48,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters({ books: "bookshelfForGetFromUser" })
+    ...mapGetters({ books: "bookshelfForGetFromUser" }) 
   },
 };
 </script>

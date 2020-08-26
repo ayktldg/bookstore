@@ -10,10 +10,10 @@
         <p class="author font-italic">{{book.author}}</p>
       </div>
       <div class="d-flex flex-column justify-content-around align-items-center w-25">
-        <div class>
-          <span>{{book.user !== null ? 'At User': 'In Store'}}</span>
+        <div :class="book.user ? 'bg-danger': 'bg-success'" class="p-1">
+          <span class="text-white">{{book.user ? 'At User': 'In Store'}}</span>
         </div>
-        <div class v-if="book.user === null">
+        <div class v-if="!book.user">
           <a class="text-danger text-decoration-none" @click="removeBook(book)">Delete</a>
         </div>
       </div>

@@ -1,9 +1,9 @@
 <template>
   <div class="home">
-    <div class="container my-5 pl-0">
+    <div class="container col-9 my-5 pl-0">
       <h1 class="title font-weight-bold">Welcome to Bookshelf</h1>
     </div>
-    <div class="menu container d-flex align-items-center px-0">
+    <div class="menu container col-9 d-flex align-items-center px-0">
       <BookstoreMenu />
       <UserMenu />
     </div>

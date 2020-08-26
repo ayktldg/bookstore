@@ -6,12 +6,12 @@
     <BaseReturnToHomeButton class="col-6" />
     <div class="container mt-3 mb-5 col-6 p-5 bg-light border">
       <ValidationObserver v-slot="{ handleSubmit }">
-        <form @submit.prevent="handleSubmit(onSave)">
+        <form @submit.prevent="handleSubmit(onSetUser)">
           <div class="form-group">
             <label for="bookControlSelect">Book Name</label>
             <select class="form-control" id="bookControlSelect" v-model="user.selectedBook">
               <option value selected disabled>Please select a book</option>
-              <option v-for="book in books" :key="book.id" :value="{id: book.id, name: book.name}">{{book.name}}</option>
+              <option v-for="book in books" :key="book.id" :value="{ id:book.id, name:book.name}">{{book.name}}</option>
             </select>
           </div>
           <div class="form-group">
@@ -23,11 +23,11 @@
               v-slot="{ errors }"
             >
               <input
-                type="text"
+                type="number"
                 class="form-control"
                 id="inputId"
                 placeholder="Please insert user identity number"
-                v-model.number="user.userId"
+                v-model="user.userId"
               />
               <span class="text-danger">{{ errors[0] }}</span>
             </ValidationProvider>
@@ -63,7 +63,7 @@
               <span class="text-danger">{{ errors[0] }}</span>
             </ValidationProvider>
           </div>
-          <button type="submit" class="btn btn-sm btn-secondary btn-block mt-5">Save</button>
+            <button type="submit" class="btn btn-sm btn-secondary btn-block mt-5">Save</button>
         </form>
       </ValidationObserver>
     </div>
@@ -89,22 +89,14 @@ export default {
     };
   },
   methods: {
-    onSave() {
-      this.$store.dispatch("SET_NEW_USER", this.user);
+    onSetUser() {
+      this.$store.dispatch("SET_NEW_USER", this.user );
       this.$notify({
-        text: `${
-          this.user.selectedBook.name
-        } has been setted to user`,
+        text: `${this.user.selectedBook.name} has been setted to user`,
         type: "success"
       });
-      this.clearForm();
+      this.$router.push('/')
     },
-    clearForm() {
-      this.user.selectedBook = "";
-      this.user.userId = "";
-      this.user.fullName = "";
-      this.user.adress = "";
-    }
   },
   computed: {
     ...mapGetters({ books: "bookshelfForSetUser" })

@@ -1,5 +1,5 @@
 <template>
-  <div class="container d-flex flex-column p-5 border bg-light">
+  <div class="menu container d-flex flex-column p-5 border bg-light">
     <h4>User Operations</h4>
     <router-link
       tag="button"
@@ -23,4 +23,8 @@ export default {
 </script>
 
 <style scoped>
+ @media (max-width: 575.98px) { 
+   .menu{
+     margin-bottom: 3rem;;
+   }}
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class=" menu container d-flex flex-column p-5 mr-4 border bg-light">
+  <div class="menu container d-flex flex-column p-5 mr-4 border bg-light">
     <h4>Book Store Operations</h4>
     <router-link
       tag="button"
@@ -20,7 +20,7 @@ export default {
 <style  scoped>
  @media (max-width: 575.98px) { 
    .menu{
-     
+     margin-bottom: 3rem;;
    }
   }
 </style>

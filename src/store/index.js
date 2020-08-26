@@ -4,7 +4,7 @@ import VuexPersistence from "vuex-persist";
 const vuexLocal = new VuexPersistence({
   storage: window.localStorage,
 });
-
+ 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -17,7 +17,8 @@ export default new Vuex.Store({
       },
       SET_NEW_USER(state,payload){
         const index = state.bookshelf.findIndex( obj => obj.id === payload.selectedBook.id);
-        state.bookshelf[index].user = payload;
+          state.bookshelf[index].user = payload;
+        console.log(state.bookshelf[index])     
       },
       REMOVE_BOOK(state,payload){
         const index = state.bookshelf.findIndex( obj => obj.id === payload.id);
@@ -30,7 +31,7 @@ export default new Vuex.Store({
   },
   actions: {
       ADD_NEW_BOOK({commit},payload){
-          const book = {...payload, user: null}
+        const book = {...payload, user: null}
           commit('ADD_NEW_BOOK', book)
       },
       SET_NEW_USER({commit},payload){
@@ -45,8 +46,8 @@ export default new Vuex.Store({
   },
   getters: {
       bookshelf: state => state.bookshelf,
-      bookshelfForSetUser: state => state.bookshelf.filter(obj => obj.user === null),
-      bookshelfForGetFromUser: state =>  state.bookshelf.filter(obj => obj.user !== null),
+      bookshelfForSetUser: state => state.bookshelf.filter(obj => !obj.user),
+      bookshelfForGetFromUser: state =>  state.bookshelf.filter(obj => obj.user)
   },
   plugins: [vuexLocal.plugin],
 });

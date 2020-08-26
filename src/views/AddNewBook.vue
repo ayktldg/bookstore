@@ -77,7 +77,7 @@ export default {
         id: "",
         name: "",
         author: "",
-        imageUrl: ""
+        imageUrl: "",
       }
     };
   },
