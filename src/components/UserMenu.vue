@@ -23,8 +23,9 @@ export default {
 </script>
 
 <style scoped>
- @media (max-width: 575.98px) { 
-   .menu{
-     margin-bottom: 3rem;;
-   }}
+@media (max-width: 575.98px) {
+  .menu {
+    margin-bottom: 3rem;
+  }
+}
 </style>

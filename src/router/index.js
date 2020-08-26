@@ -8,43 +8,44 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home
+    component: Home,
   },
   {
     path: "/add-new-book",
     name: "AddNewBook",
     component: () =>
-      import(/* webpackChunkName: "add-new-book" */ "../views/AddNewBook.vue")
+      import(/* webpackChunkName: "add-new-book" */ "../views/AddNewBook.vue"),
   },
   {
     path: "/set-to-user",
     name: "SetToUser",
     component: () =>
-      import(/* webpackChunkName: "set-to-user" */ "../views/SetToUser.vue")
+      import(/* webpackChunkName: "set-to-user" */ "../views/SetToUser.vue"),
   },
   {
     path: "/book-list",
     name: "BookList",
     component: () =>
-      import(/* webpackChunkName: "book-list" */ "../views/BookList.vue")
+      import(/* webpackChunkName: "book-list" */ "../views/BookList.vue"),
   },
   {
     path: "/get-from-user",
     name: "GetFromUser",
     component: () =>
-      import(/* webpackChunkName: "get-from-user" */ "../views/GetFromUser.vue")
+      import(
+        /* webpackChunkName: "get-from-user" */ "../views/GetFromUser.vue"
+      ),
   },
   {
     path: "*",
-    redirect: "/"
+    redirect: "/",
   },
-
 ];
 
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
-  routes
+  routes,
 });
 
 export default router;

@@ -4,7 +4,6 @@
       <div class="w-25 pr-4">
         <img :src="book.imageUrl" :alt="book.name" class="image w-100" />
       </div>
-
       <div class="main w-50 pt-3 pl-3">
         <p class="name font-weight-bold">{{book.name}}</p>
         <p class="author font-italic">{{book.author}}</p>
@@ -32,12 +31,12 @@ export default {
   },
   methods: {
     removeBook(book) {
-      this.$confirm(`Are you sure delete the ${ book.name}?`).then(() => {
+      this.$confirm(`Are you sure delete the ${book.name}?`).then(() => {
         this.$store.dispatch("REMOVE_BOOK", book);
         this.$notify({
-        text: `${book.name} deleted`,
-        type: "success"
-      });
+          text: `${book.name} deleted`,
+          type: "success"
+        });
       });
     }
   }
@@ -54,15 +53,12 @@ a {
 .name {
   font-size: 1.5em;
 }
-
 @media (max-width: 575.98px) {
   .card {
     font-size: 0.5em;
   }
   .main {
     padding-left: 4rem;
-  }
-  .image {
   }
 }
 </style>

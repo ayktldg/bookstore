@@ -7,7 +7,12 @@
       type="button"
       class="btn btn-sm btn-secondary my-5"
     >Add New Book</router-link>
-    <router-link tag="button" to="/book-list" type="button" class="btn btn-sm btn-secondary">Book List</router-link>
+    <router-link
+      tag="button"
+      to="/book-list"
+      type="button"
+      class="btn btn-sm btn-secondary"
+    >Book List</router-link>
   </div>
 </template>
 
@@ -18,9 +23,9 @@ export default {
 </script>
 
 <style  scoped>
- @media (max-width: 575.98px) { 
-   .menu{
-     margin-bottom: 3rem;;
-   }
+@media (max-width: 575.98px) {
+  .menu {
+    margin-bottom: 3rem;
   }
+}
 </style>

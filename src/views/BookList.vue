@@ -36,7 +36,7 @@ export default {
   computed: {
     ...mapGetters({ books: "bookshelf" }),
     rows() {
-      return this.books.length ;
+      return this.books.length;
     },
     paginatedBooks() {
       return this.books.slice(
@@ -47,6 +47,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-</style>

@@ -11,7 +11,11 @@
             <label for="bookControlSelect">Book Name</label>
             <select class="form-control" id="bookControlSelect" v-model="user.selectedBook">
               <option value selected disabled>Please select a book</option>
-              <option v-for="book in books" :key="book.id" :value="{ id:book.id, name:book.name}">{{book.name}}</option>
+              <option
+                v-for="book in books"
+                :key="book.id"
+                :value="{ id:book.id, name:book.name}"
+              >{{book.name}}</option>
             </select>
           </div>
           <div class="form-group">
@@ -63,7 +67,7 @@
               <span class="text-danger">{{ errors[0] }}</span>
             </ValidationProvider>
           </div>
-            <button type="submit" class="btn btn-sm btn-secondary btn-block mt-5">Save</button>
+          <button type="submit" class="btn btn-sm btn-secondary btn-block mt-5">Save</button>
         </form>
       </ValidationObserver>
     </div>
@@ -90,19 +94,16 @@ export default {
   },
   methods: {
     onSetUser() {
-      this.$store.dispatch("SET_NEW_USER", this.user );
+      this.$store.dispatch("SET_NEW_USER", this.user);
       this.$notify({
         text: `${this.user.selectedBook.name} has been setted to user`,
         type: "success"
       });
-      this.$router.push('/')
-    },
+      this.$router.push("/");
+    }
   },
   computed: {
     ...mapGetters({ books: "bookshelfForSetUser" })
   }
 };
 </script>
-
-<style scoped>
-</style>

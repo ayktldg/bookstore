@@ -77,7 +77,7 @@ export default {
         id: "",
         name: "",
         author: "",
-        imageUrl: "",
+        imageUrl: ""
       }
     };
   },
@@ -102,6 +102,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-</style>
