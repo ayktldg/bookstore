@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <router-view />
+      <transition name="page" mode="out-in">
+      <router-view />
+    </transition>
     <notifications position="top center" />
   </div>
 </template>
@@ -13,6 +15,15 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+.page-enter,
+.page-leave-active {
+  opacity: 0;
+  transform: translate(50px);
+}
+.page-enter-active,
+.page-leave {
+  transition: all 0.5s;
 }
 
 </style>
