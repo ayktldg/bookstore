@@ -96,7 +96,7 @@ export default {
     onSetUser() {
       this.$store.dispatch("SET_NEW_USER", this.user);
       this.$notify({
-        text: `${this.user.selectedBook.name} has been setted to user`,
+        text: `${this.user.selectedBook.name} has been set to user`,
         type: "success"
       });
       this.$router.push("/");

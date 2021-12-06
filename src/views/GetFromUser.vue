@@ -41,7 +41,7 @@ export default {
     onGetFromUser() {
       this.$store.dispatch("GET_FROM_USER", this.selectedBook);
       this.$notify({
-        text: `${this.selectedBook.name} has been getted from user`,
+        text: `${this.selectedBook.name} has been got from user`,
         type: "success"
       });
       this.selectedBook = "";
