@@ -15,7 +15,7 @@
           </a>
         </div>
         <div class="twitter ml-2">
-          <a href="https://twitter.com/ayktldg" target="_blank">
+          <a href="https://twitter.com/ayktldg26" target="_blank">
             <svg class="icon icon-twitter">
               <use xlink:href="#icon-twitter" />
             </svg>
